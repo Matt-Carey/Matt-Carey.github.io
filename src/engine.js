@@ -5,6 +5,9 @@ class Engine {
 			this.ctx = this.canvas.getContext('2d');
 		}
 		this.time = Date.now();
+		
+		this.background = new Image();
+		this.background.src = './content/background.png';
 	}
 	
 	tick() {
@@ -23,30 +26,13 @@ class Engine {
 	
 	draw() {
 		if(this.ctx) {
-			if(this.prevx == null) {
-				this.prevx = Math.floor(Math.random() * this.canvas.width);
+			const width = this.canvas.width;
+			const height = this.canvas.height;
+			if(this.background != null && this.background.complete) {
+				const xOffset = (this.time / width) % width;
+				this.ctx.drawImage(this.background, xOffset, 0, width, height);
+				this.ctx.drawImage(this.background, xOffset - width, 0, width, height);
 			}
-			if(this.prevy == null) {
-				this.prevy = Math.floor(Math.random() * this.canvas.height);
-			}
-			
-			let x = Math.floor(Math.random() * this.canvas.width);
-			let y = Math.floor(Math.random() * this.canvas.height);
-			
-			let r = Math.floor(Math.random() * 256);
-			let g = Math.floor(Math.random() * 256);
-			let b = Math.floor(Math.random() * 256);
-			
-			this.ctx.strokeStyle = 'rgb(' + r + ', ' + g + ', ' + b + ')';
-			
-			this.ctx.lineWidth = 1;
-			this.ctx.beginPath();
-			this.ctx.moveTo(this.prevx, this.prevy);
-			this.ctx.lineTo(x, y);
-			this.ctx.stroke();
-			
-			this.prevx = x;
-			this.prevy = y;
 		}
 	}
 }
