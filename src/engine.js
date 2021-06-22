@@ -17,21 +17,18 @@ class Engine {
 		//console.log('Delta Time:' + dt + ', Time Now:' + this.time);
 	}
 	
-	setResolution(width, height) {
-		if(this.canvas) {
-			this.canvas.width = width;
-			this.canvas.height = height;
-		}
-	}
-	
 	draw() {
+		const canvasBoundingClientRect = this.canvas.getBoundingClientRect();
+		const width = canvasBoundingClientRect.width;
+		const height = canvasBoundingClientRect.height;
+		this.canvas.width = width;
+		this.canvas.height = height;
+		
 		if(this.ctx) {
-			const width = this.canvas.width;
-			const height = this.canvas.height;
 			if(this.background != null && this.background.complete) {
 				const xOffset = (this.time / width) % width;
-				this.ctx.drawImage(this.background, xOffset, 0, width, height);
-				this.ctx.drawImage(this.background, xOffset - width, 0, width, height);
+				this.ctx.drawImage(this.background, xOffset, 0, width + 1, height);
+				this.ctx.drawImage(this.background, xOffset - width, 0, width + 1, height);
 			}
 		}
 	}
