@@ -1,7 +1,8 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #F4F4F4;
+	background-color: #C9D6DF;
+	color: #52616B;
 }
 
 #header {
@@ -48,9 +49,9 @@ body {
 }
 
 .network-dialog {
-	background-color: #606c76;
+	background-color: #1E2002;
 	border-radius: .4rem;
-	color: #fff;
+	color: #C9D6DF;
 	display: block;
 	height: 2.2rem;
 	text-align: center;
@@ -58,11 +59,11 @@ body {
 }
 
 .network-dialog:hover {
-	background-color: #3d3d3d
+	background-color: #52616B
 }
 
 .network-dialog .network-icon {
-	fill: #fff;
+	fill: #C9D6DF;
 	height: 1.5rem
 }
 
