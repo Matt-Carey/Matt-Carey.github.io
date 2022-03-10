@@ -40,7 +40,8 @@ class World {
             JSONFactory.get(worldURL).then(json => {
                 this.#scene.fromJSON(json.scene);
                 for(const level of json.levels) {
-                    JSONFactory.get(level.path).then(json => {
+                    const levelpath = IS_BROWSER ? document.URL.substring(0, document.URL.lastIndexOf('/')) + level.path : level.path;
+                    JSONFactory.get(levelpath).then(json => {
                         this.#levels.set(level.name, new Level(this, json));
                     });
                 }
