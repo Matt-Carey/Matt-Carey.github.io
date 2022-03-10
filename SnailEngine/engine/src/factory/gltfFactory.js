@@ -28,11 +28,21 @@ class GLTFFactory {
 		}
 
 		const pending = new Promise((resolve) => {
-			this.#loader.load(src, (result) => {
-				this.#pendingMap.delete(src);
-				this.#srcMap.set(src, result);
-				resolve(result);
-			});
+			if(IS_BROWSER) {
+				const fullPath = document.URL.lastIndexOf('/') + src;
+				this.#loader.load(fullPath, (result) => {
+					this.#pendingMap.delete(src);
+					this.#srcMap.set(src, result);
+					resolve(result);
+				});
+			}
+			else {
+				this.#loader.load(src, (result) => {
+					this.#pendingMap.delete(src);
+					this.#srcMap.set(src, result);
+					resolve(result);
+				});
+			}
 		});
 
 		this.#pendingMap.set(src, pending);
