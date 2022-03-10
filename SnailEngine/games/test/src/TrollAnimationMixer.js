@@ -1,5 +1,5 @@
-import { AnimationMixer } from 'http://mattcarey.com/SnailEngine/engine/src/component/3d/model/animationMixer.js';
-import { LoopOnce } from 'http://mattcarey.com/SnailEngine/engine/3rdparty/three.js/build/three.module.js';
+import { AnimationMixer } from 'https://mattcarey.com/SnailEngine/engine/src/component/3d/model/animationMixer.js';
+import { LoopOnce } from 'https://mattcarey.com/SnailEngine/engine/3rdparty/three.js/build/three.module.js';
 
 class TrollAnimationMixer extends AnimationMixer {
 

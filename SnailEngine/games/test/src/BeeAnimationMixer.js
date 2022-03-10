@@ -1,4 +1,4 @@
-import { AnimationMixer } from 'http://mattcarey.com/SnailEngine/engine/src/component/3d/model/animationMixer.js';
+import { AnimationMixer } from 'https://mattcarey.com/SnailEngine/engine/src/component/3d/model/animationMixer.js';
 
 class BeeAnimationMixer extends AnimationMixer {
     _onMixerReady() {

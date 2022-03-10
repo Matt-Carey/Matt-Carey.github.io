@@ -1,10 +1,10 @@
 {
     "cdn": {
-        "Engine": "http://mattcarey.com/SnailEngine/engine",
-        "Game": "http://mattcarey.com/SnailEngine/games/test"
+        "Engine": "https://mattcarey.com/SnailEngine/engine",
+        "Game": "https://mattcarey.com/SnailEngine/games/test"
     },
     "world": {
-        "startup": "http://108.218.89.33:8080",
+        "startup": "https://mattcarey.com/SnailEngine/games/test80",
         "_startup": "worlds/world.json"
     },
     "canvas": {

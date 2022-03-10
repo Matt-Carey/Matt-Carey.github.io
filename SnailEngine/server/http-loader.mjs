@@ -7,11 +7,11 @@ export function resolve(specifier, context, defaultResolve) {
   // Normally Node.js would error on specifiers starting with 'http://', so
   // this hook intercepts them and converts them into absolute URLs to be
   // passed along to the later hooks below.
-  if (specifier.startsWith('http://')) {
+  if (specifier.startsWith('https://')) {
     return {
       url: specifier
     };
-  } else if (parentURL && parentURL.startsWith('http://')) {
+  } else if (parentURL && parentURL.startsWith('https://')) {
     return {
       url: new URL(specifier, parentURL).href
     };
@@ -24,7 +24,7 @@ export function resolve(specifier, context, defaultResolve) {
 export function load(url, context, defaultLoad) {
   // For JavaScript to be loaded over the network, we need to fetch and
   // return it.
-  if (url.startsWith('http://')) {
+  if (url.startsWith('https://')) {
     return new Promise((resolve, reject) => {
       get(url, (res) => {
         let data = '';
