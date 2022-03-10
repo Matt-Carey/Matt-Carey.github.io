@@ -1,5 +1,6 @@
 import { EntityFactory } from './factory/entityFactory.js';
 import { TemplateFactory } from './factory/templateFactory.js';
+import { IS_BROWSER } from './util/env.js';
 import { UUID } from './util/uuid.js';
 
 class Level {
