@@ -4,7 +4,7 @@
         "Game": "https://mattcarey.com/SnailEngine/games/test"
     },
     "world": {
-        "startup": "https://mattcarey.com/SnailEngine/games/test80",
+        "startup": "http://108.218.89.33:8080",
         "_startup": "worlds/world.json"
     },
     "canvas": {
