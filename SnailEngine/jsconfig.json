@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "http://mattcarey.com/SnailEngine/engine/*": ["./engine/*"]
+      }
+    }
+  }
