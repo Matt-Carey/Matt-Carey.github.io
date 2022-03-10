@@ -1,4 +1,4 @@
-import { IS_NODE } from '../util/env.js';
+import { IS_BROWSER, IS_NODE } from '../util/env.js';
 import { GLTFLoader } from './../../3rdparty/three.js/examples/jsm/loaders/GLTFLoader.js';
 import { SkeletonUtils } from './../../3rdparty/three.js/examples/jsm/utils/SkeletonUtils.js';
 
