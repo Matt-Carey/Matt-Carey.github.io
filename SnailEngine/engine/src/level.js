@@ -9,7 +9,7 @@ class Level {
 	constructor(world, json) {
 		this.#world = world;
 		for(const templateJson of json.templates) {
-			const templatePath = templateJson.path;
+			const templatePath = IS_BROWSER ? document.URL.substring(0, document.URL.lastIndexOf('/')) + templateJson.path : templateJson.path;
 			const templateOverrides = templateJson.overrides;
 			TemplateFactory.get(templatePath).then(template => {
 				template = JSON.parse(JSON.stringify(template));
