@@ -65,7 +65,7 @@ function click_project(project) {
   descriptionMap.set('HandOfTheGods', 'At Hi-Rez Studios, I worked on Hand of The Gods as an Associate Gameplay Programmer.');
   descriptionMap.set('MafiaIII', 'At 2K, I worked Mafia III as an intern on the Core Tech team.');
   descriptionMap.set('SnailEngine', 'An experimental project leveraging Three.js for graphics, Oimo.js for physics, and Geckos.io for WebSockets. My goal is to create a modular game engine that supports real-time multiplayer for the web.');
-  descriptionMap.set('GearFrontier', 'My undergrad capstone project was Gear Frontier. A real-time multiplayer action racing shooter.');
+  descriptionMap.set('GearFrontier', 'My undergrad capstone project was Gear Frontier. I worked with a great team to create a real-time multiplayer action racing shooter.');
   descriptionMap.set('TinyBob', 'In my Networked Games class, two teammates and I created the multiplayer platformer Tiny Bob.');
   descriptionMap.set('RGB', 'In one of my college game design classes, I worked with one other programmer and a composer to create RGB. This co-op puzzle game revolves around painting the world around you.');
   descriptionMap.set('Lyvinia', 'In one of my college game design classes, I worked with an artist and a composer to create Lyvinia. This top-down RPG involved combat, explorations, cut-scenes, and a magic hat.');
