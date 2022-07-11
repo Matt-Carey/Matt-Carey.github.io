@@ -1,6 +1,0 @@
-{
-    "type": "module",
-    "dependencies": {
-        "@geckos.io/server": "^2.1.8"
-    }
-}

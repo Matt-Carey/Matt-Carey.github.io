@@ -1,0 +1,132 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #C9D6DF;
+	color: #52616B;
+}
+
+#header {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+#header h1,
+#header h2,
+#header h3,
+#header h4,
+#header h5,
+#header h6 {
+	margin-bottom: 0rem;
+}
+
+#header,
+#footer {
+	text-align: center;
+}
+
+#footer ul {
+	margin-bottom: 0.5rem;
+}
+
+.network,
+.network-list,
+.network-list a {
+	position: relative;
+	text-decoration: none
+}
+
+.network-list {
+	padding: 0.5rem 0rem;
+}
+
+.network-item {
+	display: inline-block;
+	margin: 1rem 0rem;
+}
+
+.network-item:nth-child(n+1) {
+	margin-left: .5rem
+}
+
+.network-dialog {
+	background-color: #1E2002;
+	border-radius: .4rem;
+	color: #C9D6DF;
+	display: block;
+	height: 2.2rem;
+	text-align: center;
+	width: 5rem;
+}
+
+.network-dialog:hover {
+	background-color: #52616B
+}
+
+.network-dialog .network-icon {
+	fill: #C9D6DF;
+	height: 1.5rem
+}
+
+.row-studio .column h3,
+.row-school .column h3 {
+	padding: 1rem 0rem;
+}
+
+.column h1,
+.column h2,
+.column h3,
+.column h4,
+.column h5,
+.column h6,
+.column p,
+.column ul,
+.column li {
+	margin: 0rem;
+}
+
+.job-title {
+	text-align: left;
+}
+
+.job-timeline {
+	float: right;
+}
+
+.row-game {
+	padding: 0.5rem 0rem;
+}
+
+.row-studio-hirez {
+	background-color: rgba(0, 69, 134, 0.3);
+}
+
+.row-game-hirez {
+	background-color: rgba(0, 69, 134, 0.15);
+}
+
+.row-studio-2k {
+	background-color: rgba(234, 31, 39, 0.3);
+}
+
+.row-game-2k {
+	background-color: rgba(234, 31, 39, 0.15);
+}
+
+.row-school-usc {
+	background-color: rgba(255, 204, 0, 0.3);
+}
+
+.row-game-usc {
+	background-color: rgba(255, 204, 0, 0.15);
+}
+
+.studio-logo,
+.game-logo,
+.school-logo {
+	display: block;
+	margin: auto;
+}
+
+.hidden {
+	display: none;
+}

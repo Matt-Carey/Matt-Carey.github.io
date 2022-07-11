@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Matt Carey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/index.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="sidebar">
+      <br>
+      <a href="javascript:void(0)" onclick="sidebar_close()" class="w3-button w3-hide-large w3-display-topleft" style="font-size:32px">✘</a>
+      <div class="w3-bar-block w3-padding-32">
+        <a onclick="sidebar_close();go_to_page('projects');" class="w3-bar-item w3-black" id="projects_link">Projects</a>
+        <a onclick="sidebar_close();go_to_page('about')" class="w3-bar-item w3-button w3-hover-white" id="about_link">About</a>
+        <a onclick="sidebar_close();go_to_page('contact')" class="w3-bar-item w3-button w3-hover-white" id="contact_link">Contact</a>
+        <a onclick="sidebar_close();go_to_page('resume')" class="w3-bar-item w3-button w3-hover-white" id="resume_link">Resume</a>
+      </div>
+      <div class="w3-container w3-row" id="contact_nav">
+        <div class="w3-col w3-bar">
+          <a href="https://www.linkedin.com/in/matt-carey/" title="Find me on LinkedIn" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+            <i class="fa fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/Matt-Carey/" title="Find me on GitHub" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+            <i class="fa fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:matt@mattcarey.com" title="Email me" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+            <i class="fa fa-regular fa-envelope"></i>
+          </a>
+          <a href="tel:6024217015" title="Call me" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+            <i class="fa fa-regular fa-phone"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+      <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="sidebar_open()">☰</a>
+      <span class="w3-xlarge">
+        <b>Matt Carey</b>
+      </span>
+    </header>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="sidebar_close()" style="cursor:pointer" title="close side menu" id="overlay"></div>
+    <!-- !PAGE CONTENT!-->
+    <div class="w3-main" style="height:100%;margin-left:340px;margin-right:40px">
+      <!-- Header -->
+      <div class="w3-hide-large w3-padding-32"></div>
+      <div class="w3-container">
+        <h1 class="w3-jumbo w3-hide-small w3-hide-medium">
+          <b>Matt Carey</b>
+        </h1>
+        <h1 class="w3-xxxlarge w3-hide-large" id="title">
+          <b>Projects</b>
+        </h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+        </hr>
+      </div>
+      <!-- Photo grid (modal) -->
+      <div class="display:none;" id="projects">
+        <div class="w3-row-padding">
+          <div class="w3-quarter project-image">
+            <img src="/media/images/RogueCompanyFront.jpg" style="width:100%;" alt="Rogue Company" onclick="click_project('RogueCompany')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/RealmRoyaleFront.jpg" style="width:100%;" alt="Realm Royale" onclick="click_project('RealmRoyale')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/SmiteTacticsFront.webp" style="width:100%;" alt="SMITE Tactics" onclick="click_project('HandOfTheGods')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/MafiaIIIFront.webp" style="width:100%;" alt="Mafia III" onclick="click_project('MafiaIII')">
+          </div>
+        </div>
+        <div class="w3-row-padding">
+          <div class="w3-quarter project-image">
+            <img src="/media/images/SnailEngineFront.png" style="width:100%;" alt="Snail Engine" onclick="click_project('SnailEngine')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/GearFrontierFront.jpg" style="width:100%;" alt="Gear Frontier" onclick="click_project('GearFrontier')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/TinyBobFront.png" style="width:100%;" alt="Tiny Bob" onclick="click_project('TinyBob')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/RGBFront.png" style="width:100%;" alt="RGB" onclick="click_project('RGB')">
+          </div>
+        </div>
+        <div class="w3-row-padding">
+          <div class="w3-quarter project-image">
+            <img src="/media/images/LyviniaFront.png" style="width:100%;" alt="Lyvinia" onclick="click_project('Lyvinia')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/AttackOfTrojansFront.png" style="width:100%;" alt="Attack Of Trojans" onclick="click_project('AttackOfTrojans')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/BattleShipFront.png" style="width:100%;" alt="Battle Ship" onclick="click_project('BattleShip')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/MineSweeperFront.png" style="width:100%;" alt="Mine Sweeper" onclick="click_project('MineSweeper')">
+          </div>
+        </div>
+        <!-- Modal for full size images on click-->
+        <div class="w3-container">
+          <div id="modal" class="w3-modal w3-animate-zoom" style="padding-top:0" onclick="this.style.display='none'; pause_project_video()">
+            <div class="w3-center">
+              <br>
+              <br>
+              <br>
+              <div class="w3-modal-content w3-card-4 w3-red w3-animate-zoom">
+                <span class="w3-button w3-red w3-xxlarge w3-display-topright">✘</span>
+                <br>
+                <h1 class="w3-xxlarge" id="project_title">
+                  <b>Rogue Company</b>
+                </h1>
+                <div id="project_link">
+                  <div class="w3-row-padding">
+                    <a id="project_site" href="#">
+                      <button class="w3-button w3-red">
+                        <i class="fa fa-solid fa-globe"></i>
+                        <span>Website</span>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                <br>
+                <video id="project_video" width="420" controls width="250">
+                  <source src="/media/video/RogueCompany.mp4" type="video/mp4"> Your browser does not support HTML video.
+                </video>
+				<h1 class="w3-xlarge" id="project_description">
+                  <b>At Hi-Rez Studios, I worked on Rogue Company as a Senior Gameplay Engineer.</b>
+                </h1>
+                <table class="w3-table">
+                  <tr>
+                    <td>
+                      <img id="Cpp_logo" src="/media/images/Cpp.png" style="width:100%;" alt="C++">
+                    </td>
+                    <td>
+                      <img id="CSharp_logo" src="/media/images/CSharp.png" style="width:100%;" alt="C#">
+                    </td>
+                    <td>
+                      <img id="Lua_logo" src="/media/images/Lua.png" style="width:100%;" alt="Lua">
+                    </td>
+                    <td>
+                      <img id="JavaScript_logo" src="/media/images/JavaScript.png" style="width:100%;" alt="JavaScript">
+                    </td>
+                    <td>
+                      <img id="Java_logo" src="/media/images/Java.png" style="width:50%;" alt="Java">
+                    </td>
+                    <td>
+                      <img id="UnrealEngine3_logo" src="/media/images/UnrealEngine3.png" style="width:100%;" alt="UE3">
+                    </td>
+                    <td>
+                      <img id="UnrealEngine_logo" src="/media/images/UnrealEngine.png" style="width:100%;" alt="UE4">
+                    </td>
+                    <td>
+                      <img id="Unity_logo" src="/media/images/Unity.png" style="width:100%;" alt="Unity">
+                    </td>
+                    <td>
+                      <img id="GoogleCardboard_logo" src="/media/images/GoogleCardboard.png" style="width:100%;" alt="GoogleCardboard">
+                    </td>
+                    <td>
+                      <img id="ThreeJS_logo" src="/media/images/ThreeJS.png" style="width:100%;" alt="ThreeJS">
+                    </td>
+                    <td>
+                      <img id="OimoJS_logo" src="/media/images/OimoJS.png" style="width:100%;" alt="OimoJS">
+                    </td>
+                    <td>
+                      <img id="GeckosIO_logo" src="/media/images/GeckosIO.png" style="width:100%;" alt="GeckosIO">
+                    </td>
+                    <td>
+                      <img id="GameMaker_logo" src="/media/images/GameMaker.png" style="width:100%;" alt="GameMaker">
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		<div style="display:none;" id="about">
+          <div class="w3-panel">
+            <div class="w3-row-padding">
+              <table class="w3-table">
+                <tr class="w3-hover-blue">
+                  <td style="width:auto;">
+                    <img src="/media/images/HiRez.png" style="width:128px; height:128px;" alt="Hi-Rez">
+                  </td>
+                  <td style="width:100%;">
+                    <h1 class="w3-large">
+                      <b>Hi-Rez Studios</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>Senior Gameplay Engineer</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>May 2017 - Current</b>
+                    </h1>
+                  </td>
+                </tr>
+                <tr class="w3-hover-red">
+                  <td style="width:auto;">
+                    <img src="/media/images/2K.png" style="width:128px; height:128px;" alt="Hi-Rez">
+                  </td>
+                  <td style="width:100%;">
+                    <h1 class="w3-large">
+                      <b>2K Games</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>Core Tech Intern</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>Summer 2016</b>
+                    </h1>
+                  </td>
+                </tr>
+                <tr class="w3-hover-yellow">
+                  <td style="width:auto;">
+                    <img src="/media/images/USCLogo.png" style="width:128px; height:128px;" alt="Hi-Rez">
+                  </td>
+                  <td style="width:100%;">
+                    <h1 class="w3-large">
+                      <b>University of Southern California</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>M.S. Computer Science</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>Fall 2016 - Spring 2017</b>
+                    </h1>
+                  </td>
+                </tr>
+                <tr class="w3-hover-yellow">
+                  <td style="width:auto;">
+                    <img src="/media/images/USCLogo.png" style="width:128px; height:128px;" alt="Hi-Rez">
+                  </td>
+                  <td style="width:100%;">
+                    <h1 class="w3-large">
+                      <b>University of Southern California</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>B.S. Computer Science</b>
+                    </h1>
+                    <h1 class="w3-medium">
+                      <b>Spring 2013 - Spring 2016</b>
+                    </h1>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div style="display:none;" id="contact">
+          <div class="w3-panel">
+            <div class="w3-row-padding">
+              <div>
+                <table class="w3-table">
+                  <tr>
+                    <td>
+                      <a href="tel:6024217015" title="Call me" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+                        <i class="fa fa-regular fa-phone"></i>
+                        <span>+1 (602) 421-7015</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="mailto:matt@mattcarey.com" title="Email me" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+                        <i class="fa fa-regular fa-envelope"></i>
+                        <span>Matt@MattCarey.com</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://github.com/Matt-Carey/" title="Find me on GitHub" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+                        <i class="fa fa-brands fa-github"></i>
+                        <span>github.com/Matt-Carey/</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://www.linkedin.com/in/matt-carey/" title="Find me on LinkedIn" target="_blank" rel="noopener" class="w3-bar-item w3-button">
+                        <i class="fa fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/Matt-Carey/</span>
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display:none;" id="resume">
+          <div class="w3-panel">
+            <div class="w3-row-padding">
+              <a href="/media/pdf/MattCareyResume.pdf" download="MattCareyResume">
+                <button class="w3-button w3-red">
+                  <i class="fa fa-solid fa-download"></i> Download PDF </button>
+              </a>
+            </div>
+            <br></br>
+            <div class="w3-row-padding">
+              <img src="/media/images/MattCareyResume.jpg" class="w3-image w3-border w3-padding" alt="Resume Image">
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
