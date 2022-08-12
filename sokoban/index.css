@@ -1,0 +1,102 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html {
+	background-image: url("background.png");
+	background-repeat: repeat;
+}
+
+#game {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 100%
+}
+
+#canvas {
+	position: absolute;
+	z-index: 1;
+}
+
+#gui {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%
+}
+
+.game-text {
+  font-family: 'Bubblegum Sans', serif;
+}
+
+#header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#title {
+  text-align: center;
+  font-size: 52px;
+}
+
+#victory {
+  text-align: center;
+  font-size: 48px;
+}
+
+#reset, #back, #moves-label, #moves {
+  font-size: 24px;
+}
+
+.head {
+  background: url('tilesheet.png') no-repeat -900px -656px;
+  width: 120px;
+  height: 96px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  outline: none;
+}
+
+.level-card {
+  color: white;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  height: 128px;
+  width: 128px;
+  font-family: 'Bubblegum Sans', serif;
+  font-size: 48px;
+  background-color: transparent;
+  background-image: url("tilesheet.png");
+}
+
+.level-cards {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+	.level-cards {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (min-width: 1000px) {
+	.level-cards {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media (min-width: 1400px) {
+	.level-cards {
+		grid-template-columns: repeat(8, 1fr);
+	}
+}

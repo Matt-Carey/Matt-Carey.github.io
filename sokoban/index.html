@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sokoban</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bubblegum Sans">
+		<link rel="stylesheet" href="index.css">
+		<script type="text/javascript" src="levels.js"></script>
+		<script type="text/javascript" src="tilesheet.js"></script>
+		<script type="text/javascript" src="index.js" defer></script>
+	</head>
+	<body>
+		<div id="menu">
+			<table id="header">
+				<tr>
+					<td><div class="head"></div></td>
+					<td><h1 id="title" class="game-text">Sokoban</h1></td>
+					<td><div class="head"></div></td>
+				<tr>
+			</table>
+			<div id="cards" class="level-cards">
+			</div>
+		</div>
+		<div id="game">
+			<canvas id="canvas">
+				Your browser does not support the HTML canvas tag.
+			</canvas>
+			<div id="gui">
+				<table>
+					<tr>
+						<td><button id="reset" class="game-text"> Reset </button></td>
+						<td><button id="back" class="game-text"> Back </button></td>
+					</tr>
+					<tr>
+						<td id="moves-label" class="game-text"> Moves: </td>
+						<td id="moves" class= "game-text">0</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
+
