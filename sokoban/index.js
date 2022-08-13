@@ -225,10 +225,10 @@ function onTouchEnd(e) {
 	if(deltaX == 0 && deltaY == 0) return;
 	
 	if(Math.abs(deltaX) > Math.abs(deltaY)) {
-		deltaX > 0 ? moveRight() : moveLeft();
+		deltaX > 0 ? onRight() : onLeft();
 	}
 	else {
-		deltaY > 0 ? moveDown() : moveUp();
+		deltaY > 0 ? onDown() : onUp();
 	}
 }
 
