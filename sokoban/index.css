@@ -46,7 +46,7 @@ html {
   font-size: 48px;
 }
 
-#reset, #back, #moves-label, #moves {
+#reset, #back, #undo, #moves-label, #moves {
   font-size: 24px;
 }
 

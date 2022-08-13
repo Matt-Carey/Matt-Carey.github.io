@@ -6,6 +6,7 @@ const context2d = canvasElement.getContext("2d");
 const guiElement = document.getElementById("gui");
 const backButton = document.getElementById("back");
 const resetButton = document.getElementById("reset");
+const undoButton = document.getElementById("undo");
 const moveCounter = document.getElementById("moves");
 
 var time = Date.now();
@@ -48,7 +49,8 @@ const anim = {
 var playerTile = null;
 const player = {
 	l: {x: -1, y: -1},
-	d: {x: 0, y: 0}
+	d: {x: 0, y: 0},
+	facing: "Down"
 };
 
 var boxTile = null;
@@ -186,7 +188,6 @@ function onKeyUp(e) {
 	if(index != -1) {
 		keys.splice(index, 1);
 	}
-	console.log(index, keys, e.key);
 }
 
 const touch = {
@@ -293,6 +294,7 @@ function moveRight() {
 }
 
 function faceUp() {
+	player.facing = "Up";
 	playerTile = isFlip() ? tilesheet.player.left.still : tilesheet.player.up.still;
 }
 
@@ -301,6 +303,7 @@ function walkUp() {
 }
 
 function faceDown() {
+	player.facing = "Down";
 	playerTile = isFlip() ? tilesheet.player.right.still : tilesheet.player.down.still;
 }
 
@@ -309,6 +312,7 @@ function walkDown() {
 }
 
 function faceLeft() {
+	player.facing = "Left";
 	playerTile = isFlip() ? tilesheet.player.up.still : tilesheet.player.left.still;
 }
 
@@ -317,6 +321,7 @@ function walkLeft() {
 }
 
 function faceRight() {
+	player.facing = "Right";
 	playerTile = isFlip() ? tilesheet.player.down.still : tilesheet.player.right.still;
 }
 
@@ -330,21 +335,38 @@ function setMoves(val) {
 }
 
 function onMoveComplete() {
+	var completedMove = {
+		player: null,
+		box: null
+	};
 	setMoves(game.moves + 1);
 	
+	completedMove.player = {};
+	completedMove.player.facing = {};
+	
+	completedMove.player.facing.prev = player.facing;
 	if(player.d.y == -1) faceUp();
 	else if(player.d.y == 1) faceDown();
 	else if(player.d.x == -1) faceLeft();
 	else if(player.d.x == 1) faceRight();
+	completedMove.player.facing.next = player.facing;
 	
+	completedMove.player.prev = { x: player.l.x, y: player.l.y };
 	player.l.x += player.d.x;
 	player.l.y += player.d.y;
+	completedMove.player.next = { x: player.l.x, y: player.l.y };
 	
 	if(pushBox != null) {
+		completedMove.box = {};
+		
+		completedMove.box.prev = { x: pushBox.x, y: pushBox.y };
 		pushBox.x += player.d.x;
 		pushBox.y += player.d.y;
+		completedMove.box.next = { x: pushBox.x, y: pushBox.y };
 	}
 	pushBox = null;
+	
+	game.moveHistory.push(completedMove);
 	
 	anim.d.x = 0;
 	anim.d.y = 0;
@@ -352,7 +374,7 @@ function onMoveComplete() {
 	player.d.y = 0;
 	
 	if(checkWin()) return;
-	console.log(keys);
+	
 	if(keys.length > 0) {
 		onKeyDown({key: keys[keys.length - 1]});
 	}
@@ -403,8 +425,6 @@ function drawGame() {
 	if(game.won) {
 		const winText = "You won in " + game.moves + " moves!";
 		const winTextHalfWidth = 180;
-		console.log(render.offset.x)
-		console.log(render.offset.y);
 		const x = render.offset.x + (render.scaledGameWidth / 2) - winTextHalfWidth;
 		const y = render.offset.y + (render.scaledGameHeight / 2);
 		context2d.font = '48px Bubblegum Sans';
@@ -471,7 +491,9 @@ function setTextures(seed) {
 function startGame() {
 	game.won = false;
 	playerTile = tilesheet.player.down.still;
+	player.facing = "Down";
 	setMoves(0);
+	game.moveHistory = [];
 	boxes = [];
 	goals = [];
 	walls = [];
@@ -551,6 +573,47 @@ backButton.onclick = function() {
 resetButton.onclick = function() {
 	startGame();
 	resume();
+}
+
+undoButton.onclick = function() {
+	if(isMoving()) {
+		return;
+	}
+	
+	if(game.moveHistory.length > 0) {
+		if(game.won) {
+			game.won = false;
+			enableInput();
+		}
+		setMoves(game.moves - 1);
+		const lastMove = game.moveHistory.pop();
+		
+		player.l.x = lastMove.player.prev.x;
+		player.l.y = lastMove.player.prev.y;
+		
+		switch(lastMove.player.facing.next) {
+			case "Up":
+				faceUp();
+				break;
+			case "Down":
+				faceDown();
+				break;
+			case "Left":
+				faceLeft();
+				break;
+			case "Right":
+				faceRight();
+				break;
+		}
+		
+		if(lastMove.box != null) {
+			const box = boxes.find(box => box.x == lastMove.box.next.x && box.y == lastMove.box.next.y);
+			if(box != null) {
+				box.x = lastMove.box.prev.x;
+				box.y = lastMove.box.prev.y;
+			}
+		}
+	}
 }
 
 setTextures(0);
