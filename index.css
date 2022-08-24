@@ -12,12 +12,13 @@ iframe {
   height: 480px;
 }
 
- .project-image img{
+.project-image img{
   margin-bottom:-6px;
   margin-top:16px;
   opacity:0.8;
   cursor:pointer 
 }
- .project-image img:hover{
+
+.project-image img:hover{
   opacity:1 
 }

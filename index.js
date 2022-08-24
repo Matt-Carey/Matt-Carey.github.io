@@ -109,12 +109,10 @@ function go_to_page(page) {
 	
 	for(toHide of ["projects", "about", "contact", "resume"]) {
 		document.getElementById(toHide).style.display = "none";
-		document.getElementById(toHide+"_link").classList.remove("w3-black");
-		document.getElementById(toHide+"_link").classList.add("w3-hover-white");
+		document.getElementById(toHide+"_link").classList.remove("w3-white");
 		document.getElementById(toHide+"_link").classList.add("w3-button");
 	}
 	document.getElementById(page).style.display = "block";
-	document.getElementById(page+"_link").classList.add("w3-black");
-	document.getElementById(page+"_link").classList.remove("w3-hover-white");
+	document.getElementById(page+"_link").classList.add("w3-white");
 	document.getElementById(page+"_link").classList.remove("w3-button");
 }
