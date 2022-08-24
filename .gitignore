@@ -1,2 +1,5 @@
 #ignore local scripts
 *.bat
+
+#ignore notepad++ .bak files
+*.bak
