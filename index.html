@@ -11,7 +11,7 @@
   </head>
   <body>
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="sidebar">
+    <nav class="w3-sidebar w3-blue-grey w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="sidebar">
       <br>
       <a href="javascript:void(0)" onclick="sidebar_close()" class="w3-button w3-hide-large w3-display-topleft" style="font-size:32px">✘</a>
       <div class="w3-bar-block w3-padding-32">
@@ -38,8 +38,8 @@
       </div>
     </nav>
     <!-- Top menu on small screens -->
-    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
-      <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="sidebar_open()">☰</a>
+    <header class="w3-container w3-top w3-hide-large w3-blue-grey w3-xlarge w3-padding">
+      <a href="javascript:void(0)" class="w3-button w3-blue-grey w3-margin-right" onclick="sidebar_open()">☰</a>
       <span class="w3-xlarge">
         <b>Matt Carey</b>
       </span>
@@ -57,51 +57,56 @@
         <h1 class="w3-xxxlarge w3-hide-large" id="title">
           <b>Projects</b>
         </h1>
-        <hr style="width:50px;border:5px solid red" class="w3-round">
+        <hr class="w3-blue-gray w3-round" style="width:75px;height:0.5em;">
         </hr>
       </div>
       <!-- Photo grid (modal) -->
       <div class="display:none;" id="projects">
         <div class="w3-row-padding">
           <div class="w3-quarter project-image">
-            <img src="/media/images/RogueCompanyFront.jpg" style="width:100%;" alt="Rogue Company" onclick="click_project('RogueCompany')">
+            <img src="/media/images/RogueCompanyFront.jpg" style="width:100%;" alt="Rogue Company" onclick="click_project('RogueCompany', 'video')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/RealmRoyaleFront.jpg" style="width:100%;" alt="Realm Royale" onclick="click_project('RealmRoyale')">
+            <img src="/media/images/RealmRoyaleFront.jpg" style="width:100%;" alt="Realm Royale" onclick="click_project('RealmRoyale', 'video')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/SmiteTacticsFront.webp" style="width:100%;" alt="SMITE Tactics" onclick="click_project('HandOfTheGods')">
+            <img src="/media/images/SmiteTacticsFront.webp" style="width:100%;" alt="SMITE Tactics" onclick="click_project('HandOfTheGods', 'video')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/MafiaIIIFront.webp" style="width:100%;" alt="Mafia III" onclick="click_project('MafiaIII')">
-          </div>
-        </div>
-        <div class="w3-row-padding">
-          <div class="w3-quarter project-image">
-            <img src="/media/images/SnailEngineFront.png" style="width:100%;" alt="Snail Engine" onclick="click_project('SnailEngine')">
-          </div>
-          <div class="w3-quarter project-image">
-            <img src="/media/images/GearFrontierFront.jpg" style="width:100%;" alt="Gear Frontier" onclick="click_project('GearFrontier')">
-          </div>
-          <div class="w3-quarter project-image">
-            <img src="/media/images/TinyBobFront.png" style="width:100%;" alt="Tiny Bob" onclick="click_project('TinyBob')">
-          </div>
-          <div class="w3-quarter project-image">
-            <img src="/media/images/RGBFront.png" style="width:100%;" alt="RGB" onclick="click_project('RGB')">
+            <img src="/media/images/MafiaIIIFront.webp" style="width:100%;" alt="Mafia III" onclick="click_project('MafiaIII', 'video')">
           </div>
         </div>
         <div class="w3-row-padding">
           <div class="w3-quarter project-image">
-            <img src="/media/images/LyviniaFront.png" style="width:100%;" alt="Lyvinia" onclick="click_project('Lyvinia')">
+            <img src="/media/images/SokobanFront.png" style="width:100%;" alt="Sokoban" onclick="click_project('Sokoban', 'iFrame')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/AttackOfTrojansFront.png" style="width:100%;" alt="Attack Of Trojans" onclick="click_project('AttackOfTrojans')">
+            <img src="/media/images/SnailEngineFront.png" style="width:100%;" alt="Snail Engine" onclick="click_project('SnailEngine', 'video')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/BattleShipFront.png" style="width:100%;" alt="Battle Ship" onclick="click_project('BattleShip')">
+            <img src="/media/images/GearFrontierFront.jpg" style="width:100%;" alt="Gear Frontier" onclick="click_project('GearFrontier', 'video')">
           </div>
           <div class="w3-quarter project-image">
-            <img src="/media/images/MineSweeperFront.png" style="width:100%;" alt="Mine Sweeper" onclick="click_project('MineSweeper')">
+            <img src="/media/images/TinyBobFront.png" style="width:100%;" alt="Tiny Bob" onclick="click_project('TinyBob', 'video')">
+          </div>
+        </div>
+        <div class="w3-row-padding">
+          <div class="w3-quarter project-image">
+            <img src="/media/images/RGBFront.png" style="width:100%;" alt="RGB" onclick="click_project('RGB', 'video')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/LyviniaFront.png" style="width:100%;" alt="Lyvinia" onclick="click_project('Lyvinia', 'video')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/AttackOfTrojansFront.png" style="width:100%;" alt="Attack Of Trojans" onclick="click_project('AttackOfTrojans', 'video')">
+          </div>
+          <div class="w3-quarter project-image">
+            <img src="/media/images/BattleShipFront.png" style="width:100%;" alt="Battle Ship" onclick="click_project('BattleShip', 'video')">
+          </div>
+        </div>
+        <div class="w3-row-padding">
+          <div class="w3-quarter project-image">
+            <img src="/media/images/MineSweeperFront.png" style="width:100%;" alt="Mine Sweeper" onclick="click_project('MineSweeper', 'video')">
           </div>
         </div>
         <!-- Modal for full size images on click-->
@@ -111,8 +116,8 @@
               <br>
               <br>
               <br>
-              <div class="w3-modal-content w3-card-4 w3-red w3-animate-zoom">
-                <span class="w3-button w3-red w3-xxlarge w3-display-topright">✘</span>
+              <div class="w3-modal-content w3-card-4 w3-blue-grey w3-animate-zoom">
+                <span class="w3-button w3-blue-grey w3-xxlarge w3-display-topright">✘</span>
                 <br>
                 <h1 class="w3-xxlarge" id="project_title">
                   <b>Rogue Company</b>
@@ -120,7 +125,7 @@
                 <div id="project_link">
                   <div class="w3-row-padding">
                     <a id="project_site" href="#">
-                      <button class="w3-button w3-red">
+                      <button class="w3-button w3-blue-grey">
                         <i class="fa fa-solid fa-globe"></i>
                         <span>Website</span>
                       </button>
@@ -131,52 +136,54 @@
                 <video id="project_video" width="420" controls width="250">
                   <source src="/media/video/RogueCompany.mp4" type="video/mp4"> Your browser does not support HTML video.
                 </video>
+				<iframe  id="project_iFrame" src="" title="project"></iframe> 
 				<h1 class="w3-xlarge" id="project_description">
                   <b>At Hi-Rez Studios, I worked on Rogue Company as a Senior Gameplay Engineer.</b>
                 </h1>
-                <table class="w3-table">
+                <table class="w3-table" style="margin-left:auto; margin-right:auto;">
                   <tr>
-                    <td>
-                      <img id="Cpp_logo" src="/media/images/Cpp.png" style="width:100%;" alt="C++">
+                    <td id="Cpp_logo">
+                      <img src="/media/images/Cpp.png" style="height:120px;" alt="C++">
                     </td>
-                    <td>
-                      <img id="CSharp_logo" src="/media/images/CSharp.png" style="width:100%;" alt="C#">
+                    <td id="CSharp_logo">
+                      <img src="/media/images/CSharp.png" style="height:120px;" alt="C#">
                     </td>
-                    <td>
-                      <img id="Lua_logo" src="/media/images/Lua.png" style="width:100%;" alt="Lua">
+                    <td id="Lua_logo">
+                      <img src="/media/images/Lua.png" style="height:120px;" alt="Lua">
                     </td>
-                    <td>
-                      <img id="JavaScript_logo" src="/media/images/JavaScript.png" style="width:100%;" alt="JavaScript">
+                    <td id="JavaScript_logo">
+                      <img src="/media/images/JavaScript.png" style="height:120px;" alt="JavaScript">
                     </td>
-                    <td>
-                      <img id="Java_logo" src="/media/images/Java.png" style="width:50%;" alt="Java">
+                    <td id="Java_logo">
+                      <img src="/media/images/Java.png" style="height:120px; width:50%;" alt="Java">
                     </td>
-                    <td>
-                      <img id="UnrealEngine3_logo" src="/media/images/UnrealEngine3.png" style="width:100%;" alt="UE3">
+                    <td id="UnrealEngine3_logo">
+                      <img src="/media/images/UnrealEngine3.png" style="height:120px;" alt="UE3">
                     </td>
-                    <td>
-                      <img id="UnrealEngine_logo" src="/media/images/UnrealEngine.png" style="width:100%;" alt="UE4">
+                    <td id="UnrealEngine_logo">
+                      <img src="/media/images/UnrealEngine.png" style="height:120px;" alt="UE4">
                     </td>
-                    <td>
-                      <img id="Unity_logo" src="/media/images/Unity.png" style="width:100%;" alt="Unity">
+                    <td id="Unity_logo">
+                      <img src="/media/images/Unity.png" style="height:120px;" alt="Unity">
                     </td>
-                    <td>
-                      <img id="GoogleCardboard_logo" src="/media/images/GoogleCardboard.png" style="width:100%;" alt="GoogleCardboard">
+                    <td id="GoogleCardboard_logo">
+                      <img src="/media/images/GoogleCardboard.png" style="height:120px;" alt="GoogleCardboard">
                     </td>
-                    <td>
-                      <img id="ThreeJS_logo" src="/media/images/ThreeJS.png" style="width:100%;" alt="ThreeJS">
+                    <td id="ThreeJS_logo">
+                      <img src="/media/images/ThreeJS.png" style="height:120px;" alt="ThreeJS">
                     </td>
-                    <td>
-                      <img id="OimoJS_logo" src="/media/images/OimoJS.png" style="width:100%;" alt="OimoJS">
+                    <td id="OimoJS_logo">
+                      <img src="/media/images/OimoJS.png" style="height:120px;" alt="OimoJS">
                     </td>
-                    <td>
-                      <img id="GeckosIO_logo" src="/media/images/GeckosIO.png" style="width:100%;" alt="GeckosIO">
+                    <td id="GeckosIO_logo">
+                      <img src="/media/images/GeckosIO.png" style="height:120px;" alt="GeckosIO">
                     </td>
-                    <td>
-                      <img id="GameMaker_logo" src="/media/images/GameMaker.png" style="width:100%;" alt="GameMaker">
+                    <td id="GameMaker_logo">
+                      <img src="/media/images/GameMaker.png" style="height:120px;" alt="GameMaker">
                     </td>
                   </tr>
                 </table>
+				<br>
               </div>
             </div>
           </div>
@@ -198,7 +205,7 @@
                       <b>Senior Gameplay Engineer</b>
                     </h1>
                     <h1 class="w3-medium">
-                      <b>May 2017 - Current</b>
+                      <b>May 2017 - August 2022</b>
                     </h1>
                   </td>
                 </tr>
@@ -300,7 +307,7 @@
           <div class="w3-panel">
             <div class="w3-row-padding">
               <a href="/media/pdf/MattCareyResume.pdf" download="MattCareyResume">
-                <button class="w3-button w3-red">
+                <button class="w3-button w3-blue-grey">
                   <i class="fa fa-solid fa-download"></i> Download PDF </button>
               </a>
             </div>

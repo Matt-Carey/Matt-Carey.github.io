@@ -9,12 +9,23 @@ function sidebar_close() {
   document.getElementById("overlay").style.display = "none";
 }
 
-function click_project(project) {
+function click_project(project, display) {
   document.getElementById("modal").style.display = "block";
   const video = document.getElementById('project_video');
-  const sources = video.getElementsByTagName('source');
-  sources[0].src = "/media/video/" + project + ".mp4";
-  video.load();
+  const iFrame = document.getElementById('project_iFrame');
+  
+  video.style.display = "none";
+  iFrame.style.display = "none";
+  
+  if(display == 'video') {
+	  video.style.display = "inline";
+	  const sources = video.getElementsByTagName('source');
+	  sources[0].src = "/media/video/" + project + ".mp4";
+	  video.load();
+  } else if(display == 'iFrame') {
+	  iFrame.style.display = "inline";
+	  iFrame.src = "/" + project + "/" + "index.html";
+  }
   
   const siteMap = new Map();
   siteMap.set('RogueCompany', 'https://www.roguecompany.com/');
@@ -37,6 +48,7 @@ function click_project(project) {
   techMap.set('HandOfTheGods', ['Cpp', 'UnrealEngine']);
   techMap.set('MafiaIII', ['Cpp', 'Lua']);
   techMap.set('SnailEngine',['JavaScript', 'ThreeJS', 'OimoJS', 'GeckosIO']);
+  techMap.set('Sokoban',['JavaScript']);
   techMap.set('GearFrontier',['CSharp', 'Unity']);
   techMap.set('TinyBob',['Cpp', 'UnrealEngine']);
   techMap.set('RGB',['CSharp', 'Unity']);
@@ -51,6 +63,7 @@ function click_project(project) {
   titleMap.set('HandOfTheGods', 'Hand of The Gods');
   titleMap.set('MafiaIII', 'Mafia III');
   titleMap.set('SnailEngine', 'Snail Engine');
+  titleMap.set('Sokoban', 'Sokoban');
   titleMap.set('GearFrontier', 'Gear Frontier');
   titleMap.set('TinyBob', 'Tiny Bob');
   titleMap.set('RGB', 'RGB');
@@ -65,6 +78,7 @@ function click_project(project) {
   descriptionMap.set('HandOfTheGods', 'At Hi-Rez Studios, I worked on Hand of The Gods as an Associate Gameplay Programmer.');
   descriptionMap.set('MafiaIII', 'At 2K, I worked Mafia III as an intern on the Core Tech team.');
   descriptionMap.set('SnailEngine', 'An experimental project leveraging Three.js for graphics, Oimo.js for physics, and Geckos.io for WebSockets. My goal is to create a modular game engine that supports real-time multiplayer for the web.');
+  descriptionMap.set('Sokoban', 'A Sokoban clone using assets from kenney.nl.');
   descriptionMap.set('GearFrontier', 'My undergrad capstone project was Gear Frontier. I worked with a great team to create a real-time multiplayer action racing shooter.');
   descriptionMap.set('TinyBob', 'In my Networked Games class, two teammates and I created the multiplayer platformer Tiny Bob.');
   descriptionMap.set('RGB', 'In one of my college game design classes, I worked with one other programmer and a composer to create RGB. This co-op puzzle game revolves around painting the world around you.');
@@ -80,7 +94,7 @@ function click_project(project) {
 	  document.getElementById(tech+"_logo").style.display = "none";
   }
   for(tech of techMap.get(project)) {
-	  document.getElementById(tech+"_logo").style.display = "block";
+	  document.getElementById(tech+"_logo").style.display = "inline";
   }
 }
 
