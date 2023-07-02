@@ -91,7 +91,7 @@
 		
         var bday = new Date('April 8, 2023 00:00:00');
         var now = new Date();
-        const weeks = weeksBetween(bday, now) - 1;
+        const weeks = weeksBetween(bday, now);
         const interval = (weeks * 15) * 60000;
 		
         var timeTableHead = document.getElementById("time-table-head");
