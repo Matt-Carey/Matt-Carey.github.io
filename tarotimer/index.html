@@ -72,11 +72,15 @@
     </div>
     <script>
       function weeksBetween(d1, d2) {
-        return Math.round((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
+        return Math.floor((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
+      }
+
+      function daysBetween(d1, d2) {
+        return Math.floor((d2 - d1) / (24 * 60 * 60 * 1000));
       }
 
       function hoursBetween(d1, d2) {
-        return Math.round((d2 - d1) / (60 * 60 * 1000));
+        return Math.floor((d2 - d1) / (60 * 60 * 1000));
       }
 
       function calc() {
