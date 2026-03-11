@@ -15,7 +15,7 @@ const timeline = [
       },
       {
         name:  "TED Talk",
-        thumb: "thumb/TED.png",
+        thumb: "thumb/Ted.png",
         video: "",
         description: "I contributed to a demo showcased during a TED Talk presentation, which highlighted the potential of AI to bring fictional characters to life. The demo featured Caleb, an 'AI agent' with personality and internal reasoning, demonstrating how AI-powered characters can interact with people in novel ways, generate unique video game outcomes, and enhance storytelling capabilities. I provided support for the Unreal SDK for Inworld, facilitating the integration of these advanced AI interactions.",
         tech: ["Unreal Engine 5"]
